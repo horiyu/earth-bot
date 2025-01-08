@@ -37,4 +37,8 @@ jobs:
           git commit -m "Earth Release v$(date +'%Y.%m.%d')" || echo "Nothing to commit"
 
       - name: Push changes
-        run: git push
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git remote set-url origin https://horiyu:${GH_PAT}@github.com/horiyu/earth-bot.git
+          git push

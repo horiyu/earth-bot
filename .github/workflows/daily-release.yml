@@ -15,16 +15,7 @@ jobs:
 
       - name: Get Earth image link from NASA EPIC API
         run: |
-          image_date=$(date -u +%Y-%m-%d)
-          
-          response=$(curl -s "https://epic.gsfc.nasa.gov/api/natural/date/$image_date")
-          image_name=$(echo $response | jq -r '.[0].image')
-
-          image_url="https://epic.gsfc.nasa.gov/archive/natural/$(date -u +%Y/%m/%d)/png/${image_name}.png"
-
           echo "# Earth Release v$(date +'%Y.%m.%d')" > release-notes.md
-          echo "![Earth Image](${image_url})" >> release-notes.md
-          echo "" >> release-notes.md
           echo "Today, the universe has released another day with version $(date +'%Y.%m.%d')." >> release-notes.md
           echo "- Image captured by NASA's DSCOVR satellite." >> release-notes.md
           echo "- Enjoy your day!" >> release-notes.md

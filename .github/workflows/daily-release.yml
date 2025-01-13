@@ -31,5 +31,5 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git remote set-url origin https://horiyu:${GH_PAT}@github.com/horiyu/earth-bot.git
+          git remote set-url origin https://github.com/horiyu/earth-bot.git
           git push

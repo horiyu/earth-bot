@@ -26,6 +26,18 @@ jobs:
           git add release-notes.md
           git commit -m "Earth Release v$(date +'%Y.%m.%d')" || echo "Nothing to commit"
 
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        with:
+          tag_name: "v$(date +'%Y.%m.%d')"
+          release_name: "Earth Release v$(date +'%Y.%m.%d')"
+          body_path: ./release-notes.md
+          draft: false
+          prerelease: false
+
       - name: Push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}

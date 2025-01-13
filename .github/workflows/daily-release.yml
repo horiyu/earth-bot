@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: "v$(date +'%Y.%m.%d')"
+          tag_name: "v$(date +'%Y%m%d')"
           release_name: "Earth Release v$(date +'%Y.%m.%d')"
           body_path: ./release-notes.md
           draft: false

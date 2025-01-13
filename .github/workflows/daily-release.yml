@@ -17,7 +17,6 @@ jobs:
         run: |
           echo "# Earth Release v$(date +'%Y.%m.%d')" > release-notes.md
           echo "Today, the universe has released another day with version $(date +'%Y.%m.%d')." >> release-notes.md
-          echo "- Image captured by NASA's DSCOVR satellite." >> release-notes.md
           echo "- Enjoy your day!" >> release-notes.md
 
       - name: Commit changes

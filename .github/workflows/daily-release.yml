@@ -21,8 +21,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.name "Daily Earth Bot"
-          git config --local user.email "earth-bot@example.com"
+          git config --local user.name ${GITHUB_ACTOR}
+          git config --local user.email ${secrets.GH_EMAIL}
           git add release-notes.md
           git commit -m "Earth Release v$(date +'%Y.%m.%d')" || echo "Nothing to commit"
 

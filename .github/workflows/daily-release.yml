@@ -22,7 +22,7 @@ jobs:
       - name: Commit changes
         run: |
           git config --local user.name ${GITHUB_ACTOR}
-          git config --local user.email ${secrets.GH_EMAIL}
+          git config --local user.email ${{ secrets.GH_EMAIL }}
           git add release-notes.md
           git commit -m "Earth Release v$(date +'%Y.%m.%d')" || echo "Nothing to commit"
 
